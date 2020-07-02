@@ -104,26 +104,65 @@ view: recommend_chats_evaluation {
   measure: Serves {
     type: sum
     sql: ${TABLE}."serves" ;;
-    value_format: "0"
+    value_format: "#,##0"
   }
 
   measure: Clicks {
     type: sum
     sql: ${TABLE}."clicks" ;;
-    value_format: "0"
+    value_format: "#,##0"
   }
 
   measure: Impressions {
     type: sum
     sql: ${TABLE}."impressions" ;;
-    value_format: "0"
+    value_format: "#,##0"
   }
 
   measure: Requests_to_join {
     type: sum
     sql: ${TABLE}."requests_to_join" ;;
-    value_format: "0"
+    value_format: "#,##0"
   }
 
+  measure: uniq_user_served {
+    type: count_distinct
+    sql: ${TABLE}."uniq_user_served" ;;
+  }
+
+  measure: uniq_user_impressed {
+    type: count_distinct
+    sql: ${TABLE}."uniq_user_impressed" ;;
+  }
+
+  measure: uniq_user_clicked {
+    type: count_distinct
+    sql: ${TABLE}."uniq_user_clicked" ;;
+  }
+
+  measure: uniq_user_rtj {
+    type: count_distinct
+    sql: ${TABLE}."uniq_user_rtj" ;;
+  }
+
+  measure: uniq_chat_served {
+    type: count_distinct
+    sql: ${TABLE}."uniq_chat_served" ;;
+  }
+
+  measure: uniq_chat_impressed {
+    type: count_distinct
+    sql: ${TABLE}."uniq_chat_impressed" ;;
+  }
+
+  measure: uniq_chat_clicked {
+    type: count_distinct
+    sql: ${TABLE}."uniq_chat_clicked" ;;
+  }
+
+  measure: uniq_chat_rtj {
+    type: count_distinct
+    sql: ${TABLE}."uniq_chat_rtj" ;;
+  }
 
 }
